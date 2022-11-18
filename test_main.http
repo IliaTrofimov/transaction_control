@@ -1,0 +1,46 @@
+# Test your FastAPI endpoints
+
+### hello world
+GET http://127.0.0.1:8000/hello
+Accept: application/json
+
+
+### user transactions
+GET http://127.0.0.1:8000/transactions/1
+Accept: application/json
+
+
+### user balance
+GET http://127.0.0.1:8000/user_balance/1
+Accept: application/json
+
+
+### users list
+GET http://127.0.0.1:8000/users
+Accept: application/json
+
+
+### create transaction for user 1 (+500)
+POST http://127.0.0.1:8000/transaction/5
+Content-Type: application/json
+
+{
+  "value": 1000
+}
+
+### create transaction for user 1 (-500)
+POST http://127.0.0.1:8000/transaction/1
+Content-Type: application/json
+
+{
+  "value": -500
+}
+
+
+### fail transaction for user 1 (-500k)
+POST http://127.0.0.1:8000/transaction/1
+Content-Type: application/json
+
+{
+  "value": -500000
+}
